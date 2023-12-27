@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AppComponent } from '../app.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
+    constructor(public translate : TranslateService , public appComponent?: AppComponent){}
 }
