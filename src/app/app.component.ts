@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,13 @@ import { NgModel } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Multi-Lang-Angular';
+  title = 'Multi';
+  constructor(public translate : TranslateService){
+    translate.addLangs(['en', 'fr', 'ar']);
+    translate.setDefaultLang('en');
+  }
+
+  switchLang(lang : string){
+    this.translate.use(lang);
+  }
 }
