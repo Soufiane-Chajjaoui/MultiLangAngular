@@ -7,10 +7,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#">{{'home' | translate}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">{{ 'link' | translate}}</a>
           </li>
 
           <li class="nav-item">
@@ -18,15 +18,15 @@
           </li>
         </ul>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              language
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Arabic</a></li>
-              <li><a class="dropdown-item" href="#">Franch</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">English</a></li>
-            </ul>
+            <span class="form-inline" *ngIf="appComponent">
+                <select class="form-control" #selectedLang (change)="appComponent.switchLang(selectedLang.value)">
+                  <option *ngFor="let language of translate.getLangs()" [value]="language"
+                    [selected]="language === translate.currentLang">
+                    {{ language }}
+                  </option>
+                </select>
+              </span>
+              
           </li>
       </div>
     </div>
