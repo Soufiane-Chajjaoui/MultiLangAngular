@@ -8,5 +8,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  selectedLang: any;
     constructor(public translate : TranslateService , public appComponent?: AppComponent){}
 }

@@ -12,19 +12,15 @@
           <li class="nav-item">
             <a class="nav-link" href="#">{{ 'link' | translate}}</a>
           </li>
-
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
         </ul>
         <li class="nav-item dropdown">
             <span class="form-inline" *ngIf="appComponent">
-                <select class="form-control" #selectedLang (change)="appComponent.switchLang(selectedLang.value)">
-                  <option *ngFor="let language of translate.getLangs()" [value]="language"
-                    [selected]="language === translate.currentLang">
-                    {{ language }}
-                  </option>
-                </select>
+                <select class="form-control" [(ngModel)]="selectedLang" (change)="appComponent.switchLang(selectedLang)">
+                    <option *ngFor="let language of translate.getLangs()" [value]="language"
+                      [selected]="language === translate.currentLang">
+                      {{ language }}
+                    </option>
+                  </select>
               </span>
               
           </li>

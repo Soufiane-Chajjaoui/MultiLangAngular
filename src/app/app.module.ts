@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader : {
